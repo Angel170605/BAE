@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-11-15T20:19:30.967Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0" etag="IsFVWe67rXcE3TRVTY0_" version="22.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-15T20:21:40.375Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0" etag="01sfP3lrr-kyKQIFPk1j" version="22.1.2" type="github">
   <diagram name="Página-1" id="UNRiJUsz-v9IFjcObpk8">
-    <mxGraphModel dx="1195" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1247" dy="691" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -537,53 +537,13 @@
             <mxRectangle width="102" height="32" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-415" value="Calle 1" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="244" y="537" width="103" height="32" as="geometry">
-            <mxRectangle width="103" height="32" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-416" value="Ciudad A" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="347" y="537" width="102" height="32" as="geometry">
-            <mxRectangle width="102" height="32" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-421" value="101" style="connectable=0;recursiveResize=0;fontStyle=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="569" width="102" height="33" as="geometry">
-            <mxRectangle width="102" height="33" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-422" value="Juan" style="connectable=0;recursiveResize=0;fontStyle=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="142" y="569" width="102" height="33" as="geometry">
-            <mxRectangle width="102" height="33" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-423" value="Calle 2" style="connectable=0;recursiveResize=0;fontStyle=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="244" y="569" width="103" height="33" as="geometry">
-            <mxRectangle width="103" height="33" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-424" value="Ciuddad A" style="connectable=0;recursiveResize=0;fontStyle=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="347" y="569" width="102" height="33" as="geometry">
-            <mxRectangle width="102" height="33" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="HaPwBVSfwxV4r4Eon3EN-429" value="102" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="602" width="102" height="31" as="geometry">
+          <mxGeometry x="40" y="569" width="102" height="31" as="geometry">
             <mxRectangle width="102" height="31" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="HaPwBVSfwxV4r4Eon3EN-430" value="María" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="142" y="602" width="102" height="31" as="geometry">
-            <mxRectangle width="102" height="31" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-431" value="Calle 3" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="244" y="602" width="103" height="31" as="geometry">
-            <mxRectangle width="103" height="31" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-432" value="Ciudad B" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="347" y="602" width="102" height="31" as="geometry">
+          <mxGeometry x="142" y="569" width="102" height="31" as="geometry">
             <mxRectangle width="102" height="31" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -602,14 +562,54 @@
             <mxRectangle width="102" height="32" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-452" value="Calle" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFF00;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="244" y="505" width="103" height="32" as="geometry">
-            <mxRectangle width="103" height="32" as="alternateBounds" />
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-454" value="Ciudad A" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="361" y="537" width="102" height="32" as="geometry">
+            <mxRectangle width="102" height="32" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="HaPwBVSfwxV4r4Eon3EN-453" value="Ciudad" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFF00;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
-          <mxGeometry x="347" y="505" width="102" height="32" as="geometry">
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-455" value="Ciudad B" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="361" y="569" width="102" height="31" as="geometry">
+            <mxRectangle width="102" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-456" value="Ciudad" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFF00;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="361" y="505" width="102" height="32" as="geometry">
             <mxRectangle width="102" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-457" value="Calle 1" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="463" y="537" width="102" height="32" as="geometry">
+            <mxRectangle width="102" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-458" value="Calle 3" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="463" y="569" width="102" height="31" as="geometry">
+            <mxRectangle width="102" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-459" value="Calle" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFF00;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="463" y="505" width="102" height="32" as="geometry">
+            <mxRectangle width="102" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-460" value="Ciudad A" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="361" y="569" width="102" height="32" as="geometry">
+            <mxRectangle width="102" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-461" value="Ciudad B" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="361" y="601" width="102" height="31" as="geometry">
+            <mxRectangle width="102" height="31" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-462" value="Calle 3" style="connectable=0;recursiveResize=0;align=center;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="463" y="569" width="102" height="32" as="geometry">
+            <mxRectangle width="102" height="32" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HaPwBVSfwxV4r4Eon3EN-463" value="Calle 3" style="connectable=0;recursiveResize=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#FFFFFF;shadow=0;rounded=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="463" y="601" width="102" height="31" as="geometry">
+            <mxRectangle width="102" height="31" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
       </root>

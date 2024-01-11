@@ -180,6 +180,8 @@ Hecho esto, ya pasé a la inserción de la información de los vehículos:
 
 ## 4.MODFIFICACIONES:
 
+</div>
+
 Por último, queda modificar algunos de los datos que pertenecen a las distintas tablas de la base de datos
 
 ### 1. Actualizar el nombre del proppietario con DNI "12345678A":

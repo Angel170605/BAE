@@ -353,5 +353,61 @@ Ahora, lo siguiente que había que hacer eran las distintas consultas de las tab
 └────────────────────┴───────────┘
 ```
 19. Calculando el precio total de los productos vendidos el **19/01/2024**:
+> select sum(
+```sql
+
+```
+20. Seleccionando los productos que no pertenecen a la categoría **Higiene**:
+> select nombre, categoria from productos where categoria != "Higiene";
+```sql
+┌──────────────────┬───────────┐
+│      nombre      │ categoria │
+├──────────────────┼───────────┤
+│ Arroz            │ Alimentos │
+│ Leche            │ Lácteos   │
+│ Pan              │ Panadería │
+│ Manzanas         │ Frutas    │
+│ Pollo            │ Carnes    │
+│ Huevos           │ Lácteos   │
+│ Yogurt           │ Lácteos   │
+│ Tomates          │ Verduras  │
+│ Queso            │ Lácteos   │
+│ Cereal           │ Desayuno  │
+│ Papel Higiénico  │ Hogar     │
+│ Detergente       │ Limpieza  │
+│ Galletas         │ Snacks    │
+│ Aceite de Oliva  │ Cocina    │
+│ Café             │ Bebidas   │
+│ Sopa enlatada    │ Conservas │
+│ Botellas de Agua │ Bebidas   │
+│ Cerveza          │ Bebidas   │
+└──────────────────┴───────────┘
+
+```
+
+21. Contando todos los productos que hay por categoría:
+> select categoria, count(*) as productos_por_categoria from productos group by categoria;
+```sql
+┌───────────┬─────────────────────────┐
+│ categoria │ productos_por_categoria │
+├───────────┼─────────────────────────┤
+│ Alimentos │ 1                       │
+│ Bebidas   │ 3                       │
+│ Carnes    │ 1                       │
+│ Cocina    │ 1                       │
+│ Conservas │ 1                       │
+│ Desayuno  │ 1                       │
+│ Frutas    │ 1                       │
+│ Higiene   │ 2                       │
+│ Hogar     │ 1                       │
+│ Limpieza  │ 1                       │
+│ Lácteos   │ 4                       │
+│ Panadería │ 1                       │
+│ Snacks    │ 1                       │
+│ Verduras  │ 1                       │
+└───────────┴─────────────────────────┘
+
+```
+22. Listando los productos cuyo precio es igual a la media de precios:
 > 
 </div>

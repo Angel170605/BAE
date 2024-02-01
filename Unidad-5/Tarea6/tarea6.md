@@ -205,6 +205,12 @@ select nombre, cantidad as cantidad_productos_pedidos from Clientes as cli, pedi
 ```
 ## 10. Obtener la fecha del primer pedido realizado:
 ```sql
+select fecha_pedido from pedidos where id_pedido = 1;
+┌──────────────┐
+│ fecha_pedido │
+├──────────────┤
+│ 2024-02-01   │
+└──────────────┘
 
 ```
 ## 11. Obtener los productos cuyos nombres comienzan con 'A' o 'B':

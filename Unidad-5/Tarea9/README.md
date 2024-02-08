@@ -78,6 +78,10 @@ select a.nombre, a.direccion from Alumnos as a join Inscripciones as i on a.id =
 ```
 # 5.Obtener el nombre del alumno y el nombre de la clase junto con el profesor.
 ```sql
+
+```
+# 6.Obtener el nombre del alumno, la materia y el nombre del profesor de las clases en las que está inscrito.
+```sql
 select a.nombre, c.nombre, c.profesor from Alumnos as a join Inscripciones as i on a.id = i.id_alumno join Clases as c on i.id_clase = c.id;
 ┌────────┬────────────────────────┬────────────┐
 │ nombre │         nombre         │  profesor  │
@@ -93,25 +97,80 @@ select a.nombre, c.nombre, c.profesor from Alumnos as a join Inscripciones as i 
 │ Carlos │ Economía Internacional │ Profesor R │
 │ Ana    │ Derecho Penal          │ Profesor Q │
 └────────┴────────────────────────┴────────────┘
-
-```
-# 6.Obtener el nombre del alumno, la materia y el nombre del profesor de las clases en las que está inscrito.
-```sql
-
 ```
 # 7.Obtener el nombre del alumno, la edad y la materia de las clases en las que está inscrito.
 ```sql
+select a.nombre, a.edad, c.materia from Alumnos as a join Inscripciones as i on a.id = i.id_alumno join Clases as c on i.id_clase = c.id;
+┌────────┬──────┬─────────────┐
+│ nombre │ edad │   materia   │
+├────────┼──────┼─────────────┤
+│ Juan   │ 20   │ Matemáticas │
+│ Juan   │ 20   │ Historia    │
+│ María  │ 21   │ Literatura  │
+│ María  │ 21   │ Biología    │
+│ Pedro  │ 19   │ Química     │
+│ Pedro  │ 19   │ Física      │
+│ Laura  │ 22   │ Arte        │
+│ Laura  │ 22   │ Idiomas     │
+│ Carlos │ 20   │ Economía    │
+│ Ana    │ 19   │ Derecho     │
+└────────┴──────┴─────────────┘
 
 ```
 # 8.Obtener el nombre del alumno, la dirección y el profesor de las clases en las que está inscrito.
 ```sql
+select a.nombre, a.direccion, c.profesor from Alumnos as a join Inscripciones as i on a.id = i.id_alumno join Clases as c on i.id_clase = c.id;
+┌────────┬───────────┬────────────┐
+│ nombre │ direccion │  profesor  │
+├────────┼───────────┼────────────┤
+│ Juan   │ Calle A   │ Profesor X │
+│ Juan   │ Calle A   │ Profesor Y │
+│ María  │ Calle B   │ Profesor Z │
+│ María  │ Calle B   │ Profesor W │
+│ Pedro  │ Calle C   │ Profesor V │
+│ Pedro  │ Calle C   │ Profesor U │
+│ Laura  │ Calle D   │ Profesor T │
+│ Laura  │ Calle D   │ Profesor S │
+│ Carlos │ Calle E   │ Profesor R │
+│ Ana    │ Calle F   │ Profesor Q │
+└────────┴───────────┴────────────┘
 
 ```
 # 9.Obtener el nombre del alumno y la materia de las clases en las que está inscrito, ordenado por el nombre del alumno.
 ```sql
+select a.nombre, c.materia from Alumnos as a join Inscripciones as i on a.id = i.id_alumno join Clases as c on i.id_clase = c.id order by(a.nombre);
+┌────────┬─────────────┐
+│ nombre │   materia   │
+├────────┼─────────────┤
+│ Ana    │ Derecho     │
+│ Carlos │ Economía    │
+│ Juan   │ Matemáticas │
+│ Juan   │ Historia    │
+│ Laura  │ Arte        │
+│ Laura  │ Idiomas     │
+│ María  │ Literatura  │
+│ María  │ Biología    │
+│ Pedro  │ Química     │
+│ Pedro  │ Física      │
+└────────┴─────────────┘
 
 ```
 # 10.Contar cuántos alumnos están inscritos en cada clase.
 ```sql
+select count(a.id) as n_alumnos_clase, c.id as clase from Alumnos as a join Inscripciones as i on a.id = i.id_alumno join Clases as c on i.id_clase = c.id group by (c.id);
+┌─────────────────┬───────┐
+│ n_alumnos_clase │ clase │
+├─────────────────┼───────┤
+│ 1               │ 1     │
+│ 1               │ 2     │
+│ 1               │ 3     │
+│ 1               │ 4     │
+│ 1               │ 5     │
+│ 1               │ 6     │
+│ 1               │ 7     │
+│ 1               │ 8     │
+│ 1               │ 9     │
+│ 1               │ 10    │
+└─────────────────┴───────┘
 
 ```

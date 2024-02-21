@@ -240,56 +240,156 @@ select * from comercial as co, cliente as cl, pedido as p where cl.id = p.id_cli
 ```
 5. Devuelve un listado de todos los clientes que realizaron un pedido durante el año 2017, cuya cantidad esté entre 300 € y 1000 €.
 ```sql
+select c.nombre, c.apellido1, p.fecha, p.total from cliente as c, pedido as p where c.id = p.id_cliente and fecha regexp '^2017' and p.total between 300 and 1000;
+┌────────┬───────────┬────────────┬───────┐
+│ nombre │ apellido1 │   fecha    │ total │
+├────────┼───────────┼────────────┼───────┤
+│ Marcos │ Loyola    │ 2017-09-10 │ 948.5 │
+└────────┴───────────┴────────────┴───────┘
 
 ```
 6. Devuelve el nombre y los apellidos de todos los comerciales que ha participado en algún pedido realizado por María Santana Moreno.
 ```sql
+select co.nombre, co.apellido1, co.apellido2 from comercial as co, cliente as cl, pedido as p where cl.id = p.id_cliente and co.id = p.id_comercial and cl.nombre = "María" and cl.apellido1 = "Santana" and cl.apellido2 = "Moreno";
+┌────────┬───────────┬───────────┐
+│ nombre │ apellido1 │ apellido2 │
+├────────┼───────────┼───────────┤
+│ Daniel │ Sáez      │ Vega      │
+│ Daniel │ Sáez      │ Vega      │
+└────────┴───────────┴───────────┘
 
 ```
 7. Devuelve el nombre de todos los clientes que han realizado algún pedido con el comercial Daniel Sáez Vega.
 ```sql
+select cl.nombre, cl.apellido1, cl.apellido2 from comercial as co, cliente as cl, pedido as p where cl.id = p.id_cliente and co.id = p.id_comercial and co.nombre = "Daniel" and co.apellido1 = "Sáez" and co.apellido2 = "Vega";
+┌────────┬───────────┬───────────┐
+│ nombre │ apellido1 │ apellido2 │
+├────────┼───────────┼───────────┤
+│ Adela  │ Salas     │ Díaz      │
+│ Pilar  │ Ruiz      │           │
+│ Adela  │ Salas     │ Díaz      │
+│ Adela  │ Salas     │ Díaz      │
+│ María  │ Santana   │ Moreno    │
+│ María  │ Santana   │ Moreno    │
+└────────┴───────────┴───────────┘
 
 ```
 ## Consultas resumen (Funciones)
 
 1. Calcula la cantidad total que suman todos los pedidos que aparecen en la tabla pedido.
 ```sql
+select sum(total) as total from pedido;
+┌──────────┐
+│  total   │
+├──────────┤
+│ 20992.83 │
+└──────────┘
 
 ```
 2. Calcula la cantidad media de todos los pedidos que aparecen en la tabla pedido.
 ```sql
+select avg(total) as media from pedido;
+┌─────────────┐
+│    media    │
+├─────────────┤
+│ 1312.051875 │
+└─────────────┘
 
 ```
 3. Calcula el número total de comerciales distintos que aparecen en la tabla pedido.
 ```sql
+select count(distinct id_comercial) as n_comerciales from pedido;
+┌───────────────┐
+│ n_comerciales │
+├───────────────┤
+│ 6             │
+└───────────────┘
 
 ```
 4. Calcula el número total de clientes que aparecen en la tabla cliente.
 ```sql
+select count(id) as n_clientes from cliente;
+┌────────────┐
+│ n_clientes │
+├────────────┤
+│ 10         │
+└────────────┘
 
 ```
 5. Calcula cuál es la mayor cantidad que aparece en la tabla pedido.
 ```sql
+select max(total) as valor_maximo from pedido;
+┌──────────────┐
+│ valor_maximo │
+├──────────────┤
+│ 5760.0       │
+└──────────────┘
 
 ```
 6. Calcula cuál es la menor cantidad que aparece en la tabla pedido.
 ```sql
+select min(total) as valor_maximo from pedido;
+┌──────────────┐
+│ valor_maximo │
+├──────────────┤
+│ 65.26        │
+└──────────────┘
 
 ```
 7. Calcula cuál es el valor máximo de categoría para cada una de las ciudades que aparece en la tabla cliente.
 ```sql
+select ciudad, max(categoria) from cliente group by(ciudad); 
+┌─────────┬────────────────┐
+│ ciudad  │ max(categoria) │
+├─────────┼────────────────┤
+│ Almería │ 200            │
+│ Cádiz   │ 100            │
+│ Granada │ 225            │
+│ Huelva  │ 200            │
+│ Jaén    │ 300            │
+│ Sevilla │ 300            │
+└─────────┴────────────────┘
 
 ```
 8. Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno de los clientes. Es decir, el mismo cliente puede haber realizado varios pedidos de diferentes cantidades el mismo día. Se pide que se calcule cuál es el pedido de máximo valor para cada uno de los días en los que un cliente ha realizado un pedido. Muestra el identificador del cliente, nombre, apellidos, la fecha y el valor de la cantidad.
 ```sql
+select c.nombre, p.fecha, max(p.total) as valor_total from cliente as c, pedido as p where c.id = p.id_cliente group by(c.id);
+┌────────┬────────────┬─────────────┐
+│ nombre │   fecha    │ valor_total │
+├────────┼────────────┼─────────────┤
+│ Aarón  │ 2019-03-11 │ 2389.23     │
+│ Adela  │ 2015-09-10 │ 5760.0      │
+│ Adolfo │ 2016-08-17 │ 75.29       │
+│ Adrián │ 2017-10-10 │ 1983.43     │
+│ Marcos │ 2017-09-10 │ 948.5       │
+│ María  │ 2019-01-25 │ 545.75      │
+│ Pilar  │ 2016-07-27 │ 2400.6      │
+│ Pepe   │ 2016-10-10 │ 2480.4      │
+└────────┴────────────┴─────────────┘
 
 ```
 9. Calcula cuál es el máximo valor de los pedidos realizados durante el mismo día para cada uno de los clientes, teniendo en cuenta que sólo queremos mostrar aquellos pedidos que superen la cantidad de 2000 €.
 ```sql
+select c.nombre, p.fecha, max(p.total) as valor_total from cliente as c, pedido as p where c.id = p.id_cliente and total > "2000" group by(c.id);
+┌────────┬────────────┬─────────────┐
+│ nombre │   fecha    │ valor_total │
+├────────┼────────────┼─────────────┤
+│ Aarón  │ 2019-03-11 │ 2389.23     │
+│ Adela  │ 2015-09-10 │ 5760.0      │
+│ Pilar  │ 2016-07-27 │ 2400.6      │
+│ Pepe   │ 2016-10-10 │ 2480.4      │
+└────────┴────────────┴─────────────┘
 
 ```
 10. Calcula el máximo valor de los pedidos realizados para cada uno de los comerciales durante la fecha 2016-08-17. Muestra el identificador del comercial, nombre, apellidos y total.
 ```sql
+select c.id, c.nombre, c.apellido1, c.apellido2, p.total from comercial as c, pedido as p where c.id = p.id_comercial and fecha = "2016-08-17";
+┌────┬─────────┬───────────┬───────────┬───────┐
+│ id │ nombre  │ apellido1 │ apellido2 │ total │
+├────┼─────────┼───────────┼───────────┼───────┤
+│ 3  │ Diego   │ Flores    │ Salas     │ 110.5 │
+│ 7  │ Antonio │ Vega      │ Hernández │ 75.29 │
+└────┴─────────┴───────────┴───────────┴───────┘
 
 ```
 11. Devuelve un listado con el identificador de cliente, nombre y apellidos y el número total de pedidos que ha realizado cada uno de clientes. Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido. Estos clientes también deben aparecer en el listado indicando que el número de pedidos realizados es 0.

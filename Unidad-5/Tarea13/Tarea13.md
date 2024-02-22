@@ -2,22 +2,72 @@
 
 1. Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre.
 ```sql
+select nombre, apellido1, apellido2 from persona where tipo = "alumno" order by(apellido1);
+┌──────────┬───────────┬───────────┐
+│  nombre  │ apellido1 │ apellido2 │
+├──────────┼───────────┼───────────┤
+│ Antonio  │ Domínguez │ Guerrero  │
+│ Sonia    │ Gea       │ Ruiz      │
+│ Juan     │ Gutiérrez │ López     │
+│ Pedro    │ Heller    │ Pagac     │
+│ Daniel   │ Herman    │ Pacocha   │
+│ Irene    │ Hernández │ Martínez  │
+│ Ramón    │ Herzog    │ Tremblay  │
+│ José     │ Koss      │ Bayer     │
+│ Inma     │ Lakin     │ Yundt     │
+│ Juan     │ Saez      │ Vega      │
+│ Ismael   │ Strosin   │ Turcotte  │
+│ Salvador │ Sánchez   │ Pérez     │
+└──────────┴───────────┴───────────┘
 
 ```
 2. Averigua el nombre y los dos apellidos de los alumnos que no han dado de alta su número de teléfono en la base de datos.
 ```sql
+select nombre, apellido1, apellido2 from persona where tipo = "alumno" and telefono is null ;
+┌────────┬───────────┬───────────┐
+│ nombre │ apellido1 │ apellido2 │
+├────────┼───────────┼───────────┤
+│ Pedro  │ Heller    │ Pagac     │
+│ Ismael │ Strosin   │ Turcotte  │
+└────────┴───────────┴───────────┘
 
 ```
 3. Devuelve el listado de los alumnos que nacieron en 1999.
 ```sql
+select nombre, apellido1, apellido2 from persona where tipo = 'alumno' and fecha_nacimiento regexp '^1999' ;
+┌─────────┬───────────┬───────────┐
+│ nombre  │ apellido1 │ apellido2 │
+├─────────┼───────────┼───────────┤
+│ Ismael  │ Strosin   │ Turcotte  │
+│ Antonio │ Domínguez │ Guerrero  │
+└─────────┴───────────┴───────────┘
+
 
 ```
 4. Devuelve el listado de profesores que no han dado de alta su número de teléfono en la base de datos y además su nif termina en K.
 ```sql
+select nombre, apellido1, apellido2 from persona where tipo = "profesor" and telefono is null and nif regexp 'K$';
+┌───────────┬───────────┬───────────┐
+│  nombre   │ apellido1 │ apellido2 │
+├───────────┼───────────┼───────────┤
+│ Antonio   │ Fahey     │ Considine │
+│ Guillermo │ Ruecker   │ Upton     │
+└───────────┴───────────┴───────────┘
 
 ```
 5. Devuelve el listado de las asignaturas que se imparten en el primer cuatrimestre, en el tercer curso del grado que tiene el identificador 7.
 ```sql
+select * from asignatura where cuatrimestre = '1' and curso = '3' and id_grado = '7'; 
+┌────┬───────────────────────────────────────────┬──────────┬─────────────┬───────┬──────────────┬─────────────┬──────────┐
+│ id │                  nombre                   │ creditos │    tipo     │ curso │ cuatrimestre │ id_profesor │ id_grado │
+├────┼───────────────────────────────────────────┼──────────┼─────────────┼───────┼──────────────┼─────────────┼──────────┤
+│ 72 │ Bases moleculares del desarrollo vegetal  │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 73 │ Fisiología animal                         │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 74 │ Metabolismo y biosíntesis de biomoléculas │ 6.0      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 75 │ Operaciones de separación                 │ 6.0      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 76 │ Patología molecular de plantas            │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 77 │ Técnicas instrumentales básicas           │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+└────┴───────────────────────────────────────────┴──────────┴─────────────┴───────┴──────────────┴─────────────┴──────────┘
 
 ```
 ## Consultas multitabla (Join)
@@ -26,6 +76,17 @@
 ```
 1. Devuelve un listado con los datos de todas las alumnas que se han matriculado alguna vez en el Grado en Ingeniería Informática (Plan 2015).
 ```sql
+select * from asignatura where cuatrimestre = '1' and curso = '3' and id_grado = '7'; 
+┌────┬───────────────────────────────────────────┬──────────┬─────────────┬───────┬──────────────┬─────────────┬──────────┐
+│ id │                  nombre                   │ creditos │    tipo     │ curso │ cuatrimestre │ id_profesor │ id_grado │
+├────┼───────────────────────────────────────────┼──────────┼─────────────┼───────┼──────────────┼─────────────┼──────────┤
+│ 72 │ Bases moleculares del desarrollo vegetal  │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 73 │ Fisiología animal                         │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 74 │ Metabolismo y biosíntesis de biomoléculas │ 6.0      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 75 │ Operaciones de separación                 │ 6.0      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 76 │ Patología molecular de plantas            │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+│ 77 │ Técnicas instrumentales básicas           │ 4.5      │ obligatoria │ 3     │ 1            │             │ 7        │
+└────┴───────────────────────────────────────────┴──────────┴─────────────┴───────┴──────────────┴─────────────┴──────────┘
 
 ```
 1. Devuelve un listado con todas las asignaturas ofertadas en el Grado en Ingeniería Informática (Plan 2015).

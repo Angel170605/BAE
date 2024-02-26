@@ -76,11 +76,75 @@ select * from asignatura where cuatrimestre = '1' and curso = '3' and id_grado =
 ```
 1. Devuelve un listado con los datos de todas las alumnas que se han matriculado alguna vez en el Grado en Ingeniería Informática (Plan 2015).
 ```sql
-select * from persona as p, asignatura as a, alumno_se_matricula_asignatura as asma, curso_escolar as c where p.id = asma.id_alumno and asma.id_asignatura = a.id and asma.id_curso_escolar = c.id and p.sexo = 'M' and a.nombre = 'Ingeniería Informática' and c.anyo_inicio = '2015';
+select p.nif, p.nombre, p.apellido1, p.apellido2, g.nombre  from persona as p, alumno_se_matricula_asignatura as asma, asignatura as a, grado as g where p.id = asma.id_alumno and asma.id_asignatura = a.id and a.id_grado = g.id and p.sexo = 'M' and g.nombre = 'Grado en Ingeniería Informática (Plan 2015)' group by p.nif;
+┌───────────┬────────┬───────────┬───────────┬─────────────────────────────────────────────┐
+│    nif    │ nombre │ apellido1 │ apellido2 │                   nombre                    │
+├───────────┼────────┼───────────┼───────────┼─────────────────────────────────────────────┤
+│ 11578526G │ Inma   │ Lakin     │ Yundt     │ Grado en Ingeniería Informática (Plan 2015) │
+│ 64753215G │ Irene  │ Hernández │ Martínez  │ Grado en Ingeniería Informática (Plan 2015) │
+│ 85135690V │ Sonia  │ Gea       │ Ruiz      │ Grado en Ingeniería Informática (Plan 2015) │
+└───────────┴────────┴───────────┴───────────┴─────────────────────────────────────────────┘
+
 
 ```
 1. Devuelve un listado con todas las asignaturas ofertadas en el Grado en Ingeniería Informática (Plan 2015).
 ```sql
+select a.nombre as asignaturas_grado_informática from asignatura as a, grado as g where g.id = a.id_grado and g.nombre = 'Grado en Ingeniería Informática (Plan 2015)';
+┌────────────────────────────────────────────────────────────────────────┐
+│                     asignaturas_grado_informática                      │
+├────────────────────────────────────────────────────────────────────────┤
+│ Álgegra lineal y matemática discreta                                   │
+│ Cálculo                                                                │
+│ Física para informática                                                │
+│ Introducción a la programación                                         │
+│ Organización y gestión de empresas                                     │
+│ Estadística                                                            │
+│ Estructura y tecnología de computadores                                │
+│ Fundamentos de electrónica                                             │
+│ Lógica y algorítmica                                                   │
+│ Metodología de la programación                                         │
+│ Arquitectura de Computadores                                           │
+│ Estructura de Datos y Algoritmos I                                     │
+│ Ingeniería del Software                                                │
+│ Sistemas Inteligentes                                                  │
+│ Sistemas Operativos                                                    │
+│ Bases de Datos                                                         │
+│ Estructura de Datos y Algoritmos II                                    │
+│ Fundamentos de Redes de Computadores                                   │
+│ Planificación y Gestión de Proyectos Informáticos                      │
+│ Programación de Servicios Software                                     │
+│ Desarrollo de interfaces de usuario                                    │
+│ Ingeniería de Requisitos                                               │
+│ Integración de las Tecnologías de la Información en las Organizaciones │
+│ Modelado y Diseño del Software 1                                       │
+│ Multiprocesadores                                                      │
+│ Seguridad y cumplimiento normativo                                     │
+│ Sistema de Información para las Organizaciones                         │
+│ Tecnologías web                                                        │
+│ Teoría de códigos y criptografía                                       │
+│ Administración de bases de datos                                       │
+│ Herramientas y Métodos de Ingeniería del Software                      │
+│ Informática industrial y robótica                                      │
+│ Ingeniería de Sistemas de Información                                  │
+│ Modelado y Diseño del Software 2                                       │
+│ Negocio Electrónico                                                    │
+│ Periféricos e interfaces                                               │
+│ Sistemas de tiempo real                                                │
+│ Tecnologías de acceso a red                                            │
+│ Tratamiento digital de imágenes                                        │
+│ Administración de redes y sistemas operativos                          │
+│ Almacenes de Datos                                                     │
+│ Fiabilidad y Gestión de Riesgos                                        │
+│ Líneas de Productos Software                                           │
+│ Procesos de Ingeniería del Software 1                                  │
+│ Tecnologías multimedia                                                 │
+│ Análisis y planificación de las TI                                     │
+│ Desarrollo Rápido de Aplicaciones                                      │
+│ Gestión de la Calidad y de la Innovación Tecnológica                   │
+│ Inteligencia del Negocio                                               │
+│ Procesos de Ingeniería del Software 2                                  │
+│ Seguridad Informática                                                  │
+└────────────────────────────────────────────────────────────────────────┘
 
 ```
 2. Devuelve un listado de los profesores junto con el nombre del departamento al que están vinculados. El listado debe devolver cuatro columnas, primer apellido, segundo apellido, nombre y nombre del departamento. El resultado estará ordenado alfabéticamente de menor a mayor por los apellidos y el nombre.

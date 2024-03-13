@@ -1,7 +1,10 @@
 <div align="center">
+
 # TAREA 3
+
 ## CONSULTAS:
-Realiza las siguientes consultas:
+
+### Realiza las siguientes consultas:
 </div>
 
 - Mostrar todos los clientes.

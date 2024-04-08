@@ -1,6 +1,10 @@
+<div align = center>
+
 # TAREA 4
 
 ## ¡QUÉ PEREZA!
+
+</div>
 
 - Realiza cada una de las siguientes consultas:
     

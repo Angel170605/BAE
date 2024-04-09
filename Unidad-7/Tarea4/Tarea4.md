@@ -7,14 +7,17 @@
 </div>
 
 - Realiza cada una de las siguientes consultas:
-    
-  ```sql
 
-  ```
-        
     - Actores que tienen de primer nombre __Scarlett__.
     
   ```sql
+    select * from actor where first_name = "Scarlett";
+    +----------+------------+-----------+---------------------+
+    | actor_id | first_name | last_name | last_update         |
+    +----------+------------+-----------+---------------------+
+    |       81 | SCARLETT   | DAMON     | 2006-02-15 04:34:33 |
+    |      124 | SCARLETT   | BENING    | 2006-02-15 04:34:33 |
+    +----------+------------+-----------+---------------------+
 
   ```
     

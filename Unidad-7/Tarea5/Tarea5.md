@@ -158,12 +158,14 @@ create fulltext index prodcut_tx_index on producto(nombre, descripcion);
   - Contienen la palabra planta en el nombre o en la descripción.
 
   ```sql
-select from * producto where match(nombre, descripcion) against('planta');
+    select from * producto where match(nombre, descripcion) against('planta');
   ```
 
   - Realice una consulta para cada uno de los modos de búsqueda full-text que existen en MySQL (IN NATURAL LANGUAGE MODE, IN BOOLEAN MODE y WITH QUERY EXPANSION) y compare los resultados que ha obtenido en cada caso.
 
-
+  ```sql
+    
+  ```
 
   - Contienen la palabra planta seguida de cualquier carácter o conjunto de caracteres, en el nombre o en la descripción.
 

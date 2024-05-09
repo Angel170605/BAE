@@ -11,7 +11,7 @@
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100),
     salario DECIMAL(10, 2)
-);
+      );
       ```
       ```sql
             delimiter //

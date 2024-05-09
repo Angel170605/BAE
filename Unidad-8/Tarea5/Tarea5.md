@@ -19,16 +19,15 @@
             begin
                 declare done int default false;
                 declare n_emp varchar(100);
-                declare s_emp decimal(10, 2);
-                declare cur cursor FOR SELECT nombre, salario FROM empleados WHERE salario < 3000.;
+                declare cur cursor FOR SELECT nombre FROM empleados WHERE salario < 3000.;
                 declare continue handler for not found set done = true;
           OPEN cur;
           read_loop: LOOP
-              FETCH cur INTO n_emp, s_emp;
+              FETCH cur INTO n_emp;
               IF done THEN
                   LEAVE read_loop;
               END IF;
-              INSERT INTO empleados_destino (nombre, salario) values(n_emp, s_emp);
+              INSERT INTO empleados_destino (nombre) values(n_emp);
           END LOOP;
           CLOSE cur;
       END //

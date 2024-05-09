@@ -2,8 +2,6 @@
 
 # TAREA 5
 
-![image](https://github.com/Angel170605/BAE/assets/145053589/5682ccd3-8b42-4fce-8821-4bf0aea515f7)
-
 </div>
 
 1. Escribe un procedimiento almacenado que copie los nombres de todos los empleados cuyo salario sea superior a 3000 en una nueva tabla llamada 'empleados_destino'. Es necesario crear la tabla __empleados_destino__.

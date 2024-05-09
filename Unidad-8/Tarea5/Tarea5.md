@@ -141,8 +141,6 @@
       CREATE PROCEDURE aumentar_salario_de(IN nombre_emp VARCHAR(100))
       BEGIN
           DECLARE done INT DEFAULT FALSE;
-          DECLARE emp_id INT;
-          DECLARE nombre_emp VARCHAR(100);
           DECLARE emp_salario DECIMAL(10, 2);
           DECLARE cur CURSOR FOR SELECT nombre FROM empleados WHERE nombre = nombre_emp;
           DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
@@ -158,4 +156,27 @@
           CLOSE cur;
       END //
       DELIMITER ;
+      ```
+      ```sql
+      select * from empleados;
+      +----+--------+---------+
+      | id | nombre | salario |
+      +----+--------+---------+
+      |  1 | Juan   | 3630.00 |
+      |  2 | María  | 4235.00 |
+      |  3 | Pedro  | 3200.00 |
+      +----+--------+---------+
+      
+      mysql> call aumentar_salario_de('María');
+      Query OK, 0 rows affected (0,01 sec)
+      
+      mysql> select * from empleados;
+      +----+--------+---------+
+      | id | nombre | salario |
+      +----+--------+---------+
+      |  1 | Juan   | 3630.00 |
+      |  2 | María  | 5082.00 |
+      |  3 | Pedro  | 3200.00 |
+      +----+--------+---------+
+
       ```

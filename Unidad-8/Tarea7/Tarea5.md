@@ -33,15 +33,25 @@
    bono FLOAT,
    integral FLOAT
   );
-
-
   ```
 
 - Creación de un __procedimiento__ de forma aleatoria con las siguientes características:
     - Parámetro de entrada el número de registros (_Mínimo 10, y realiza la prueba varias veces_).
  
     ```sql
-
+  DELIMITER //
+  create procedure insert_people(IN n_insterts INT) 
+   BEGIN
+    if n_inserts > 0 then
+    INSERT INTO salario(nombre, id)
+    SELECT FLOOR(RAND() * (10000 - 2000 + 1)) + 2000, CONCAT('Empleado', RAND())
+    FROM (SELECT 1 UNION SELECT 2) AS sub
+    ORDER BY RAND()
+    LIMIT 2;
+    n_inserts = n_inserts - 1;
+    end if;
+    end //
+    DELIMITER ; 
     ```
 
 - Cree una función para cada punto teniendo en cuenta que:

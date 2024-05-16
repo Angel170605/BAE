@@ -20,7 +20,7 @@
     - Pensión(__Escoge el tipo de dato__).
     - Bono(__Escoge el tipo de dato__).
     - Integral(__Escoge el tipo de dato__).
- 
+
   ```sql
   CREATE TABLE salario(
    id VARCHAR(100) PRIMARY KEY,
@@ -32,6 +32,8 @@
    bono FLOAT,
    integral FLOAT
 );
+
+
   ```
 
 - Creación de un __procedimiento__ de forma aleatoria con las siguientes características:

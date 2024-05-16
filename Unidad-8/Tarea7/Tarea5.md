@@ -21,6 +21,7 @@
     - Bono(__Escoge el tipo de dato__).
     - Integral(__Escoge el tipo de dato__).
 
+
   ```sql
   CREATE TABLE salario(
    id VARCHAR(100) PRIMARY KEY,
@@ -31,7 +32,7 @@
    pension FLOAT,
    bono FLOAT,
    integral FLOAT
-);
+  );
 
 
   ```

@@ -26,7 +26,7 @@
   CREATE TABLE salario(
    id VARCHAR(100) PRIMARY KEY,
    nombre VARCHAR(100),
-   salario_base FLOAT,
+   salario_base INT,
    subsidio FLOAT,
    salud FLOAT,
    pension FLOAT,
@@ -44,7 +44,7 @@
    BEGIN
     if n_inserts > 0 then
     INSERT INTO salario(id, nombre, salario_base)
-    SELECT FLOOR(RAND() * (10000 - 2000 + 1)) + 2000, CONCAT('Empleado', FLOOR(RAND() * (100 - 1 + 1)) + 1, FLOOR(RAND() * (3000 - 1 +1)) + 1
+    SELECT FLOOR(RAND() * (10000 - 2000 + 1)) + 2000, CONCAT('Empleado', FLOOR(RAND() * (100 - 1 + 1)) + 1, FLOOR(RAND() * (3000 - 1 + 1)) + 1
     FROM (SELECT 1 UNION SELECT 2) AS sub
     ORDER BY RAND()
     LIMIT 2;

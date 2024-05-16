@@ -40,15 +40,15 @@
  
     ```sql
   DELIMITER //
-  create procedure insert_people(IN n_insterts INT) 
+  create procedure insert_people(IN n_inserts INT) 
    BEGIN
     if n_inserts > 0 then
-    INSERT INTO salario(nombre, id)
-    SELECT FLOOR(RAND() * (10000 - 2000 + 1)) + 2000, CONCAT('Empleado', RAND())
+    INSERT INTO salario(id, nombre, salario_base)
+    SELECT FLOOR(RAND() * (10000 - 2000 + 1)) + 2000, CONCAT('Empleado', FLOOR(RAND() * (100 - 1 + 1)) + 1, FLOOR(RAND() * (3000 - 1 +1)) + 1
     FROM (SELECT 1 UNION SELECT 2) AS sub
     ORDER BY RAND()
     LIMIT 2;
-    n_inserts = n_inserts - 1;
+    set n_inserts=n_inserts-1;
     end if;
     end //
     DELIMITER ; 

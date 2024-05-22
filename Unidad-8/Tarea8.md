@@ -21,7 +21,7 @@ Los triggers están guatemaltecos, algo raro tienen que no funcionan
 
 <div align="center">
 
-### trigger_check_nota_before_insert.
+### CREACIÓN DE UN TRIGGER QUE SE EJECUTA ANTES DE INSERTAR DATOS EN LA TABLA:
 
 </div>
 
@@ -32,10 +32,10 @@ Los triggers están guatemaltecos, algo raro tienen que no funcionan
   BEFORE INSERT ON alumnos
   FOR EACH ROW 
   BEGIN
-      IF NEW.nota<0
-        THEN SET NEW.nota = 0;
-      IF NEW.nota>10
-        THEN SET NEW.nota=10;
+      IF NEW.nota < 0 THEN
+        SET NEW.nota = 0;
+      ELSEIF NEW.nota > 10 THEN
+        SET NEW.nota = 10;
     END IF;
   END; $$
 
@@ -44,7 +44,7 @@ DELIMITER //
 
 <div align="center">
 
-### trigger_check_nota_before_update.
+### CREACIÓN DE UN TRIGGER QUE SE EJECUTA ANTES DE ACTUALIZAR LOS DATOS DE LA TABLA:
 
 </div>
 
@@ -55,10 +55,10 @@ DELIMITER //
   BEFORE UPDATE ON alumnos
   FOR EACH ROW 
   BEGIN
-      IF NEW.nota<0
-        THEN SET NEW.nota = 0;
-      IF NEW.nota>10
-        THEN SET NEW.nota=10;
+      IF NEW.nota < 0 THEN
+        SET NEW.nota = 0;
+      ELSEIF NEW.nota > 10 THEN
+        SET NEW.nota = 10;
     END IF;
   END; $$
 

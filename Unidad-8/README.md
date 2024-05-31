@@ -60,6 +60,14 @@ END;//
   - CONDICIONES DE ACTIVACIÓN: INSERT (cuando insertas datos) | DELETE (cuando eliminas datos) | UPDATE (cuando modificas datos)
 
 - Luego, en la caurta línea vemos un 'EACH ROW'. Esto como un bucle for de python que recorre todas las lineas de la tabla.
+
+### PROCEDIMIENTOS
+
+
+
+### FUNCIONES
+
+
   
 ### COSAS EXÓTICAS:
 
